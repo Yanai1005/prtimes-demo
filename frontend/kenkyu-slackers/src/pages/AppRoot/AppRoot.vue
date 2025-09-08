@@ -32,8 +32,8 @@
     fugaOptions.value = getOptions("fuga");
   })
 
-  const resultLeft = ref("");
-  const resultRight = ref("");
+  const resultSuggestion = ref("");
+  const resultAdvice = ref("");
 </script>
 
 <template>
@@ -45,36 +45,36 @@
       <el-form-item label="選択肢2">
         <option-selector :value="fugaValue" :options="fugaOptions" />
       </el-form-item>
-      <el-form-item label="本文（マークダウン）" label-position="top">
-        <markdown-editor :value="markdownContent" />
-      </el-form-item>
-      <el-form-item>
-        <el-button type="primary">
-          送信
-        </el-button>
-      </el-form-item>
-    </el-form>
-    <el-form label-position="top">
       <el-row :gutter="20">
         <el-col :span="12">
-          <el-form-item label="アドバイス">
-            <el-input
-              v-model="resultLeft"
-              type="textarea"
-              disabled
-            />
+          <el-form-item label="本文（マークダウン）" label-position="top">
+            <markdown-editor :value="markdownContent" />
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="変更案">
+          <el-form-item label="変更案" label-position="top">
             <el-input
-              v-model="resultRight"
+              v-model="resultSuggestion"
               type="textarea"
               disabled
             />
           </el-form-item>
         </el-col>
       </el-row>
+      <el-form-item>
+        <el-button type="primary">
+          送信
+        </el-button>
+      </el-form-item>
+    </el-form>
+    <el-form>
+      <el-form-item label="アドバイス" label-position="top">
+        <el-input
+          v-model="resultAdvice"
+          type="textarea"
+          disabled
+        />
+      </el-form-item>
     </el-form>
   </div>
 </template>
