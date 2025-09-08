@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElementPlusTest: typeof import('./src/components/ElementPlusTest.vue')['default']
     ElForm: typeof import('element-plus/es')['ElForm']
@@ -17,6 +18,7 @@ declare module 'vue' {
     ElInput: typeof import('element-plus/es')['ElInput']
     ElMain: typeof import('element-plus/es')['ElMain']
     ElOption: typeof import('element-plus/es')['ElOption']
+    ElRow: typeof import('element-plus/es')['ElRow']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     Hoge: typeof import('./src/components/Hoge.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

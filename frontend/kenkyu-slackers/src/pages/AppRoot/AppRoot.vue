@@ -31,6 +31,9 @@
     hogeOptions.value = getOptions("hoge");
     fugaOptions.value = getOptions("fuga");
   })
+
+  const resultLeft = ref("");
+  const resultRight = ref("");
 </script>
 
 <template>
@@ -42,7 +45,7 @@
       <el-form-item label="選択肢2">
         <option-selector :value="fugaValue" :options="fugaOptions" />
       </el-form-item>
-      <el-form-item label="本文（マークダウン）">
+      <el-form-item label="本文（マークダウン）" label-position="top">
         <markdown-editor :value="markdownContent" />
       </el-form-item>
       <el-form-item>
@@ -50,6 +53,28 @@
           送信
         </el-button>
       </el-form-item>
+    </el-form>
+    <el-form label-position="top">
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <el-form-item label="アドバイス">
+            <el-input
+              v-model="resultLeft"
+              type="textarea"
+              disabled
+            />
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="変更案">
+            <el-input
+              v-model="resultRight"
+              type="textarea"
+              disabled
+            />
+          </el-form-item>
+        </el-col>
+      </el-row>
     </el-form>
   </div>
 </template>
