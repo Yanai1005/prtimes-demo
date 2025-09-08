@@ -33,22 +33,16 @@ func getIndustryIDs(w http.ResponseWriter, r *http.Request) {
 
 // Apiに対するリクエストについて、とりあえず構造とアクセス方法が正しければOK, ダメなら原因を表示する
 func checkApiRequest(w http.ResponseWriter, r *http.Request) {
-	var requiredParams []string = []string{"industry_id", "important_aspects"}
 	if r.Method != http.MethodPost {
 		fmt.Fprintln(w, "POSTメソッドでアクセスしてください")
 		return
 	}
 
-	for _, v := range requiredParams {
-		if r.FormValue(v) == "" {
-			fmt.Fprintf(w, "%sは必須項目です", v)
-			return
-		}
-	}
-
 	var input Input
 	if err := json.NewDecoder(r.Body).Decode(&input); err != nil {
-		fmt.Fprintf(w, "%s", err)
+		fmt.Fprintf(w, "%s\n", err)
+		fmt.Fprint(w, "正しい形のJSONデータを渡してください")
+		return
 	}
 
 	fmt.Fprintln(w, "OK")
