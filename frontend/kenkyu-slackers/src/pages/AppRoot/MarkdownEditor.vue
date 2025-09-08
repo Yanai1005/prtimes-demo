@@ -11,7 +11,6 @@
 <template>
   <el-input
     v-model="valueRef"
-    :rows="2"
     type="textarea"
   />
 </template>

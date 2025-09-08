@@ -34,9 +34,21 @@ import MarkdownEditor from "@/pages/AppRoot/MarkdownEditor.vue";
 </script>
 
 <template>
-  <option-selector :value="hogeValue" :options="hogeOptions" />
-  <option-selector :value="fugaValue" :options="fugaOptions" />
-  <markdown-editor :value="markdownContent" />
+  <div class="container">
+    <option-selector :value="hogeValue" :options="hogeOptions" />
+    <option-selector :value="fugaValue" :options="fugaOptions" />
+    <markdown-editor :value="markdownContent" />
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    padding: 0 20vw;
+    gap: 10px;
+    height: 100%;
+  }
+</style>
