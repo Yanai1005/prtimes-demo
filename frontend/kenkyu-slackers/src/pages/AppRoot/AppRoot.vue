@@ -2,6 +2,7 @@
   import type { ReviewCustomizeOption } from "@/pages/AppRoot/types";
   import OptionSelector from "./OptionSelector.vue"
   import { onMounted, ref } from "vue";
+import MarkdownEditor from "@/pages/AppRoot/MarkdownEditor.vue";
 
   const getOptions = (optionType: string): ReviewCustomizeOption => {
     // TODO: 本番実装置き換え
@@ -22,9 +23,10 @@
   }
 
   const hogeOptions = ref<ReviewCustomizeOption>({});
-  const hogeValue = ref("");
   const fugaOptions = ref<ReviewCustomizeOption>({});
+  const hogeValue = ref("");
   const fugaValue = ref("");
+  const markdownContent = ref("");
   onMounted(() => {
     hogeOptions.value = getOptions("hoge");
     fugaOptions.value = getOptions("fuga");
@@ -34,6 +36,7 @@
 <template>
   <option-selector :value="hogeValue" :options="hogeOptions" />
   <option-selector :value="fugaValue" :options="fugaOptions" />
+  <markdown-editor :value="markdownContent" />
 </template>
 
 <style scoped></style>
