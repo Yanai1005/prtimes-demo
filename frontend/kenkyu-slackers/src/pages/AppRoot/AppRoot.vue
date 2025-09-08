@@ -35,20 +35,27 @@ import MarkdownEditor from "@/pages/AppRoot/MarkdownEditor.vue";
 
 <template>
   <div class="container">
-    <option-selector :value="hogeValue" :options="hogeOptions" />
-    <option-selector :value="fugaValue" :options="fugaOptions" />
-    <markdown-editor :value="markdownContent" />
+    <el-form>
+      <el-form-item label="選択肢1">
+        <option-selector :value="hogeValue" :options="hogeOptions" />
+      </el-form-item>
+      <el-form-item label="選択肢2">
+        <option-selector :value="fugaValue" :options="fugaOptions" />
+      </el-form-item>
+      <el-form-item label="本文（マークダウン）">
+        <markdown-editor :value="markdownContent" />
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary">
+          送信
+        </el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
 <style scoped>
   .container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
     padding: 0 20vw;
-    gap: 10px;
-    height: 100%;
   }
 </style>
