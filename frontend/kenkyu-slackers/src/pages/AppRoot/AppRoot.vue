@@ -2,7 +2,7 @@
   import type { ReviewCustomizeOption } from "@/pages/AppRoot/types";
   import OptionSelector from "./OptionSelector.vue"
   import { onMounted, ref } from "vue";
-import MarkdownEditor from "@/pages/AppRoot/MarkdownEditor.vue";
+  import MarkdownEditor from "@/pages/AppRoot/MarkdownEditor.vue";
 
   const getOptions = (optionType: string): ReviewCustomizeOption => {
     // TODO: 本番実装置き換え
