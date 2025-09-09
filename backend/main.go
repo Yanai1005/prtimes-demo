@@ -17,7 +17,6 @@ func main() {
 	http.ListenAndServe(":8080", nil)
 }
 
-// 指定可能な業種とそのid
 func getIndustryIDs(w http.ResponseWriter, r *http.Request) {
 	industryMap := map[string]string{
 		"0": "その他",
